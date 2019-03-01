@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+CARGO_FILE=$1/Cargo.toml
+if [ -f $CARGO_FILE ]; then
+  echo "Example Rust"
+  exit 0
+fi
+exit 1
