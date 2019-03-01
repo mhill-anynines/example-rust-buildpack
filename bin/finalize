@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+DEPS_DIR=$3
+INDEX=$4
+
+# Install rustup and allow it to setup Rust tool chain
+export CARGO_HOME=$CACHE_DIR
+export RUSTUP_HOME=$CACHE_DIR
+
+source $CACHE_DIR/env
+
+pushd $BUILD_DIR
+cargo build --release
