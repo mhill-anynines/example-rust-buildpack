@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+
+CRATE_NAME=$(grep name $BUILD_DIR/Cargo.toml | sed 's/^name = "\(.*\)"$/\1/')
+
+echo "
+default_process_types:
+  web: target/release/$CRATE_NAME
+"
